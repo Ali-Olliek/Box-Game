@@ -95,10 +95,10 @@
 
 /* Mobile Screens */
 
-@media (max-width:699px) {
+@media (max-width:400px) {
     .message {
-    width: 50%;
-    font-size: 20px;
+    width: 75%;
+    font-size: 15px;
     position: absolute;
     left: 28%;
     right:30%;
@@ -106,8 +106,8 @@
     }
 
     .box {
-    height: 100px;
-    width: 100px;
+    margin-left: 20px;
+    height: 75px;
+    width: 75px;
     }
-    
 }
