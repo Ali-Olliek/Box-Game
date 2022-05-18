@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: black;
 }
 
 /* The Game's Message to The Player */
 
 .message {
+    color: white;
     font-family:'Courier New', Courier, monospace;
     font-weight: normal;
     font-size: 64px;
@@ -15,11 +17,35 @@
     right:30%;
     top:20%;
 }
+
+/* The Boxes */
+
 .boxes {
-    display: inline-block;
+    display: flex;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+    right: 30%;
 }
+
 .box {
+    justify-content: space-between;
+    display: inline-block;
     height: 300px;
     width: 300px;
-    border: 5px solid black;
+    border: 5px solid white;
+    margin-bottom: 50px;
+}
+
+.box-1 {
+    background-color: red;
+}
+.box-2 {
+    background-color:green;
+}
+.box-3 {
+    background-color: blue;
+}
+.box-4 {
+    background-color: yellow;
 }
