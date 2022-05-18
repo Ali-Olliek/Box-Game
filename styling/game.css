@@ -49,3 +49,65 @@
 .box-4 {
     background-color: yellow;
 }
+
+/* middle sized screens */
+@media (min-width:1200px) and (max-width: 1600px) {
+    .message {
+    width: 50%;
+    font-size: 42px;
+    position: absolute;
+    left: 28%;
+    right:30%;
+    top:20%;
+    }
+    
+    .boxes {
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .box {
+    height: 200px;
+    width: 200px;
+    }
+}
+
+/* Tablet Screen */
+
+
+@media (min-width:700px) and (max-width:1199px) {
+    .message {
+    width: 50%;
+    font-size: 30px;
+    position: absolute;
+    left: 28%;
+    right:30%;
+    top:20%;
+    }
+
+    .box {
+    height: 150px;
+    width: 150px;
+    }
+    
+}
+
+/* Mobile Screens */
+
+@media (max-width:699px) {
+    .message {
+    width: 50%;
+    font-size: 20px;
+    position: absolute;
+    left: 28%;
+    right:30%;
+    top:20%;
+    }
+
+    .box {
+    height: 100px;
+    width: 100px;
+    }
+    
+}
