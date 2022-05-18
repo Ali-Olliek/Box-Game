@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* The Game's Message to The Player */
+
+.message {
+    font-family:'Courier New', Courier, monospace;
+    font-weight: normal;
+    font-size: 64px;
+    position: absolute;
+    left: 30%;
+    right:30%;
+    top:20%;
+}
+.boxes {
+    display: inline-block;
+}
+.box {
+    height: 300px;
+    width: 300px;
+    border: 5px solid black;
+}
