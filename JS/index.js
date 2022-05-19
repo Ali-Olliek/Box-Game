@@ -17,3 +17,14 @@
 // --- Level + 1
 // --- (We then start again but instead of zero-ing the played-boxes-list we append to it)
 // --- else: playing = False. Display lose animation (red background, display You Lost! message)
+
+
+//get random index
+
+function get_random_index() {
+var random_index = Math.floor(Math.random()*4);
+return(random_index);
+}
+
+var index = get_random_index();
+console.log(index)
