@@ -28,9 +28,6 @@ return(random_index);
 
 // Choose box randomly
 
-
-
-
 console.log(chosen_box);
 
 var played_boxes = [];
