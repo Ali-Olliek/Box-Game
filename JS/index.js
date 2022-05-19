@@ -31,12 +31,20 @@ return(random_index);
 console.log(chosen_box);
 
 var played_boxes = [];
+var level = 1
 
-for (i=0; i<4; i++) {
-var box_index = get_random_index();
-var boxes_list = ["box-1","box-2","box-3","box-4"];
-var chosen_box = boxes_list[box_index]
-played_boxes.push(chosen_box);
+document.addEventListener('space', ); {
+    let playing = true;
+}
 
+while (playing == true) {
+
+    for (i=0; i<level; i++) {
+    var box_index = get_random_index();
+    var boxes_list = ["box-1","box-2","box-3","box-4"];
+    var chosen_box = boxes_list[box_index]
+    played_boxes.push(chosen_box);
+    }
 }
 console.log(played_boxes);
+
