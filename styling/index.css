@@ -1,20 +1,7 @@
-@keyframes box1 {
-    from {background-color: red;}
+@keyframes box {
     to {background-color: grey;}
 }
 
-@keyframes box2 {
-    from {background-color: blue;}
-    to {background-color: grey;}
-}
-@keyframes box3 {
-    from {background-color: green;}
-    to {background-color: grey;}
-}
-@keyframes box4 {
-    from {background-color: yellow;}
-    to {background-color: grey;}
-}
 
 * {
     margin: 0;

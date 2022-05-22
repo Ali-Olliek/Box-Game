@@ -21,9 +21,21 @@
 //get random index
 
 var get_random_index = function () {
-var random_index = Math.floor(Math.random()*4);
-return(random_index);
-}
+    var random_index = Math.floor(Math.random()*4);
+    return(random_index);
+    }
+
+// Global Variables
+
+var boxes_list = document.getElementsByClassName("box")
+var audio1 = new Audio ("Assets/sounds/sounds/red.mp3")
+var audio2 = new Audio ("Assets/sounds/sounds/green.mp3")
+var audio3 = new Audio ("Assets/sounds/sounds/blue.mp3")
+var audio4 = new Audio ("Assets/sounds/sounds/yellow.mp3")
+var playing = false;
+var random_index = get_random_index()
+
+
 
 
 // Choose box randomly
@@ -41,41 +53,33 @@ return(random_index);
 //         }
 //         console.log("played_boxes: "+played_boxes);
 //     }
+
+
 var played_boxes = [];
-console.log("playedboxes"+played_boxes)
 
 var play_box = function() {
     random_index = get_random_index()
-    var boxes_list = ['box1','box2','box3','box4'];
     box_to_play = boxes_list[random_index]
     played_boxes.push(box_to_play);
-    console.log(played_boxes)
-    return played_boxes;
+    return played_boxes
 
 }
 
-var animate_box = function(box) {
-    document.getElementById(box).style.animation="box2 1s linear 1";
-    }
 
 document.addEventListener("keyup", (e) => { 
     if (e.code === "Space") {
-        boxes_to_animate=[]
-        boxes_to_animate.push(play_box())
-        for (var i = 0;i<boxes_to_animate.length;i++){    
-            animate_box(boxes_to_animate[i])
-        }
+        
+        var test=play_box()
+        console.log(test)
     }
 });
 
-// Global Variables
-var box1 = document.getElementById('box1')
-var box2 = document.getElementById('box2')
-var box3 = document.getElementById('box3')
-var box4 = document.getElementById('box4')
-var audio1 = new Audio ('Assets/sounds/_MACOSX/sounds/._red.mp3')
-audio1.play()
-var playing = false;
 
-var random_index = get_random_index()
-console.log(random_index)
+
+// var animate_box = function(box) {
+//     boxes_to_animate=[]
+//     boxes_to_animate.push(play_box())
+//     for (var i = 0;i<boxes_to_animate.length;i++){    
+//         boxes_to_animate[i];
+//         }
+//     }
