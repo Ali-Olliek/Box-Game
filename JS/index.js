@@ -52,45 +52,46 @@ var choose_box = function() {
 
 var play_box = function() {
         for(let i=0;i<played_boxes.length;i++){ 
-
+        game_prompt.innerHTML = "LEVEL: " + (i+1);
             if (played_boxes[i] == "box1") {
               box1.setAttribute("class", "box box-1 grey_box");
               setTimeout(() => {
                 box1.classList.remove("grey_box");
                 audio1.play();
-              }, (500 * i) / 5 + i);
+              }, (500 * i) / 5 - i);
             } 
             else if (played_boxes[i] == "box2") {
               box2.setAttribute("class", "box box-2 grey_box");
               setTimeout(() => {
                 box2.classList.remove("grey_box");
                 audio2.play();
-              }, (500 * i) / 5 + i);
+              }, (500 * i) / 5 - i);
             } 
             else if (played_boxes[i] == "box3") {
               box3.setAttribute("class", "box box-3 grey_box");
               setTimeout(() => {
                 box3.classList.remove("grey_box");
                 audio3.play();
-              }, 500 * i);
+              }, 500 * i/5-i);
             }
 
             else {
                 box4.setAttribute("class", "box box-4 grey_box");
                 setTimeout(() => {box4.classList.remove("grey_box");
-                audio4.play();}, 500 * i/5+i);
+                audio4.play();}, 500 * i/5-i);
         }
         
         }
 }
 
 var user_plays = function () {
-    for (var i = 0; i < boxes_list_2.length; i++) {
-      boxes_list_2[i].addEventListener("click", check_pattern)
-    }
 } 
 
-var check_pattern = function() {
+var add_to_list = function() {
+    var box1_EL = box1.addEventListener('click', boxes_guessed.push())
+    var box2_EL = box2.addEventListener('click', boxes_guessed.push())
+    var box3_EL = box3.addEventListener('click', boxes_guessed.push())
+    var box4_EL = box4.addEventListener('click', boxes_guessed.push())
     boxes_guessed = []
     boxes_guessed.push(user_plays())
     console.log(boxes_guessed)
@@ -100,7 +101,7 @@ var check_pattern = function() {
 var you_won = function() {
     level++
     document.body.style.backgroundColor = "green";
-    game_prompt.innerHTML = "YOU WON!"+level;
+    
 }
 
 var you_lost = function () {
