@@ -1,16 +1,17 @@
-@keyframes red-grey {
+@keyframes box1 {
     from {background-color: red;}
     to {background-color: grey;}
 }
-@keyframes blue-grey {
+
+@keyframes box2 {
     from {background-color: blue;}
     to {background-color: grey;}
 }
-@keyframes green-grey {
+@keyframes box3 {
     from {background-color: green;}
     to {background-color: grey;}
 }
-@keyframes yellow-grey {
+@keyframes box4 {
     from {background-color: yellow;}
     to {background-color: grey;}
 }
@@ -52,28 +53,25 @@
     width: 300px;
     border: 5px solid white;
     margin-bottom: 50px;
+    
 }
 
 .box-1 {
-    animation-name: red-grey;
-    animation-duration: 0.5s;
     background-color: red;
 }
+
 .box-2 {
-    animation-name: green-grey;
-    animation-duration: 0.5s;
     background-color:green;
 }
+
 .box-3 {
-    animation-name: blue-grey;
-    animation-duration: 0.5s;
     background-color: blue;
 }
+
 .box-4 {
-    animation-name: yellow-grey;
-    animation-duration: 0.5s;
     background-color: yellow;
 }
+
 
 /* middle sized screens */
 @media (min-width:1200px) and (max-width: 1600px) {
