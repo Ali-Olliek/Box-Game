@@ -1,4 +1,5 @@
-@keyframes box {
+@keyframes box1 {
+    from {background-color: red;}
     to {background-color: grey;}
 }
 

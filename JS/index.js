@@ -27,34 +27,17 @@ var get_random_index = function () {
 
 // Global Variables
 
-var boxes_list = document.getElementsByClassName("box")
+var box1 = document.getElementById('box1')
+var box2 = document.getElementById('box2')
+var box3 = document.getElementById('box3')
+var box4 = document.getElementById('box4')
 var audio1 = new Audio ("Assets/sounds/sounds/red.mp3")
 var audio2 = new Audio ("Assets/sounds/sounds/green.mp3")
 var audio3 = new Audio ("Assets/sounds/sounds/blue.mp3")
 var audio4 = new Audio ("Assets/sounds/sounds/yellow.mp3")
 var playing = false;
 var random_index = get_random_index()
-
-
-
-
-// Choose box randomly
-
-// var choose_box = function() {
-
-//         var played_boxes = [];
-//         var level = 1
-
-//         for (i=0; i<level; i++) {
-//             var box_index = get_random_index();
-//             var boxes_list = ['box1','box2','box3','box4'];
-//             var chosen_box = boxes_list[box_index]
-//             played_boxes.push(chosen_box);
-//         }
-//         console.log("played_boxes: "+played_boxes);
-//     }
-
-
+var boxes_list = ['box1','box2','box3','box4']
 var played_boxes = [];
 
 var play_box = function() {
@@ -68,18 +51,73 @@ var play_box = function() {
 
 document.addEventListener("keyup", (e) => { 
     if (e.code === "Space") {
-        
-        var test=play_box()
-        console.log(test)
+        play_box()
+        animate_boxes()
+        console.log(played_boxes)
+
     }
 });
-
-
-
-// var animate_box = function(box) {
-//     boxes_to_animate=[]
-//     boxes_to_animate.push(play_box())
-//     for (var i = 0;i<boxes_to_animate.length;i++){    
-//         boxes_to_animate[i];
+var animate_boxes = function(){
+// setTimeout(function() {
+//     for(let i=0;i<played_boxes.length;i++){
+//         if(played_boxes[i]=='box1'){
+//             audio1.play()
+//             box1.style.animation='box1'
+//             console.log("in box1"+i)
 //         }
-//     }
+//         console.log("this is i:  " +i)
+//         if (played_boxes[i]=='box2'){
+//             audio2.play()
+//             box2.style.animation='box'
+
+//             console.log("in box2"+i)
+//         }
+//         console.log("this is i:  " +i)
+//         if (played_boxes[i]=='box3'){
+//             audio3.play()
+//             box3.style.animation='box'
+//             console.log("in box3"+i)
+//         }
+//         console.log("this is i:  " +i)
+//         if (played_boxes[i]=='box4'){
+//             audio4.play()
+//             box4.style.animation='box'  
+//             console.log("in box4")
+//         }        
+//         }
+//         }, 1000)
+// }
+
+
+setTimeout(() => {
+    for(let i = 0; i<played_boxes.length;i++) {
+        if(played_boxes[i]=='box1'){
+            setTimeout(() => {
+            audio1.play()
+            box1.style.backgroundColor='grey'
+        }, 1000);
+            
+        }
+        else if (played_boxes[i]=='box2'){
+            setTimeout(() => {
+                audio2.play()
+                box2.style.backgroundColor='grey'
+            }, 1000);
+             
+        }
+        else if (played_boxes[i]=='box3'){
+            setTimeout(() => {
+                audio3.play()
+                box3.style.backgroundColor='grey'
+            }, 1000);
+        }
+        else if (played_boxes[i]=='box4'){
+            setTimeout(() => {
+                audio4.play()
+                box4.style.backgroundColor='grey'
+            }, 1000);
+        }
+    }
+}, 1000);
+
+}
