@@ -45,54 +45,54 @@ var choose_box = function() {
     box_to_play = boxes_list[random_index]
     played_boxes.push(box_to_play);
     return played_boxes
-    
-
 }
+
 
 var play_box = function(){
         for(let i=0;i<played_boxes.length;i++){
+            box4.setAttribute("class", "box box-4");
+            box3.setAttribute("class", "box box-3");
+            box2.setAttribute("class", "box box-2");
+            box1.setAttribute("class", "box box-1");
+
             console.log('outside')
 
-                if(played_boxes[i]=='box1'){
-                document.getElementById("box1").style.animation =
-                  "box 1 linear 1";
-                audio1.play();
-                audio1.pause();
+            if(played_boxes[i]=='box1'){
                 setTimeout(() => {
-                  audio1.play();
-                }, 1000);
+                box1.setAttribute("class", "box grey_box");
+                audio1.play();
+                box1.removeAttribute("grey_box");
+                }, 1000*i);
                 
-            }
+        }
 
             console.log("in timeout")
-              if (played_boxes[i] == "box2") {
+            if (played_boxes[i] == "box2") {
+                setTimeout(() => {
+                box2.setAttribute("class", "box grey_box");
                 audio2.play();
-                audio2.pause();
-                setTimeout(() => {
-                  audio2.play();
-                }, 1000);
-                document.getElementById("box2").style.animation =
-                  "box 1 linear 1";
-              }
+                box1.removeAttribute("grey_box");
+                }, 1000*i);
+                
+        }
             
-              if (played_boxes[i] == "box3") {
-                audio3.play();
-                audio3.pause();
-                setTimeout(() => {audio3.play();
-                }, 1000);
-                document.getElementById("box3").style.animation =
-                  "box 1 linear 1";
-              }
-
-              if (played_boxes[i] == "box4") {
-                audio4.play();
-                audio4.pause();
+            if (played_boxes[i] == "box3") {
                 setTimeout(() => {
-                  audio4.play();
-                }, 1000);
-                document.getElementById("box1").style.animation =
-                  "box 1 linear 1";
-              }
+                box3.setAttribute("class", "box grey_box");
+                audio3.play();
+                box1.removeAttribute("grey_box");
+                }, 1000*i);
+                
+        }
+
+            if (played_boxes[i] == "box4") {
+                setTimeout(() => {
+                box4.setAttribute("class", "box grey_box");
+                audio3.play();
+                box1.removeAttribute("grey_box");
+                }, 1000*i);
+                
+        }
             console.log("this is i:  " +i)
             
         }
@@ -103,9 +103,6 @@ document.addEventListener("keyup", (e) => {
         choose_box()
         play_box()
         console.log(played_boxes)
-        
-        
-        
 }})
 
     clearInterval(boxes_sounds);
