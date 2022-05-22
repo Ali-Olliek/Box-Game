@@ -27,10 +27,10 @@ var get_random_index = function () {
 
 // Global Variables
 
-var box1 = document.getElementById('box1')
-var box2 = document.getElementById('box2')
-var box3 = document.getElementById('box3')
-var box4 = document.getElementById('box4')
+let box1 = document.getElementById('box1')
+let box2 = document.getElementById('box2')
+let box3 = document.getElementById('box3')
+let box4 = document.getElementById('box4')
 var game_prompt= document.getElementById('game_prompt')
 var audio1 = new Audio ("Assets/sounds/sounds/red.mp3")
 var audio2 = new Audio ("Assets/sounds/sounds/green.mp3")
@@ -39,7 +39,7 @@ var audio4 = new Audio ("Assets/sounds/sounds/yellow.mp3")
 var random_index = get_random_index()
 var boxes_list = ['box1','box2','box3','box4']
 var boxes_list_2 = document.getElementsByClassName('box')
-level = 0;
+level = 1;
 
 var played_boxes = [];
 
@@ -84,17 +84,9 @@ var play_box = function() {
         }
 }
 
-var user_plays = function () {
-} 
-
-var add_to_list = function() {
-    var box1_EL = box1.addEventListener('click', boxes_guessed.push())
-    var box2_EL = box2.addEventListener('click', boxes_guessed.push())
-    var box3_EL = box3.addEventListener('click', boxes_guessed.push())
-    var box4_EL = box4.addEventListener('click', boxes_guessed.push())
-    boxes_guessed = []
-    boxes_guessed.push(user_plays())
-    console.log(boxes_guessed)
+var check_pattern= function() {
+    
+    
 
 }
 
@@ -114,6 +106,8 @@ document.addEventListener("keyup", (e) => {
         choose_box()
         console.log(played_boxes)
         play_box()
-        user_plays()
-
+        boxes_guessed = []
+        // box1_EL=box1.addEventListener("click", (e) => {boxes_guessed.push(e.box1);});
+        boxes_guessed.push(box1.addEventListener("click",check_pattern))
+        console.log(boxes_guessed)
 }})
