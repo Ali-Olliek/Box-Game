@@ -21,23 +21,19 @@
 
 //get random index
 
-function get_random_index() {
+var get_random_index = function () {
 var random_index = Math.floor(Math.random()*4);
 return(random_index);
 }
 
 // Choose box randomly
 
+var choose_box = function() {
 console.log(chosen_box);
 
 var played_boxes = [];
 var level = 1
 
-document.addEventListener('space', ); {
-    let playing = true;
-}
-
-while (playing == true) {
 
     for (i=0; i<level; i++) {
     var box_index = get_random_index();
@@ -45,6 +41,14 @@ while (playing == true) {
     var chosen_box = boxes_list[box_index]
     played_boxes.push(chosen_box);
     }
-}
-console.log(played_boxes);
 
+console.log(played_boxes);
+}
+
+document.addEventListener("keyup", (e) => { 
+    if (e.code === "Space") {
+    console.log("=>SpaceBar")
+    choose_box()
+    game_start()
+    }
+});
